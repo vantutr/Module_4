@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Sách Bài Hát</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; text-align: left; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        audio { width: 100%; max-width: 300px; }
+    </style>
+</head>
+<body>
+<h1>Danh sách bài hát đã upload</h1>
+<a th:href="@{/create}">Upload bài hát mới</a>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>Tên bài hát</th>
+        <th>Nghệ sĩ</th>
+        <th>Thể loại</th>
+        <th>Nghe thử</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song : ${songs}">
+        <td th:text="${song.name}"></td>
+        <td th:text="${song.artist}"></td>
+        <td th:text="${song.genre}"></td>
+        <td>
+            <audio controls>
+                <source th:src="@{/music/{filePath}(filePath=${song.filePath})}" type="audio/mpeg">
+                Trình duyệt không hỗ trợ.
+            </audio>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

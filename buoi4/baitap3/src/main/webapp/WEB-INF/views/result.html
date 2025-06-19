@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai Báo Thành Công</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .result-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result-container h1 {
+            text-align: center;
+            color: #28a745;
+            font-size: 24px;
+        }
+        .info-section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .info-section h3 {
+            font-size: 18px;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        .info-section p {
+            margin: 5px 0;
+        }
+        .info-section p strong {
+            display: inline-block;
+            width: 200px;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+<div class="result-container">
+    <h1>KHAI BÁO Y TẾ THÀNH CÔNG!</h1>
+    <p style="text-align: center;">Cảm ơn bạn đã hợp tác. Dưới đây là thông tin bạn đã cung cấp.</p>
+
+    <div class="info-section">
+        <h3>Thông tin cá nhân</h3>
+        <p><strong>Họ và tên:</strong> <span th:text="${declaration.name}"></span></p>
+        <p><strong>Năm sinh:</strong> <span th:text="${declaration.yearOfBirth}"></span></p>
+        <p><strong>Giới tính:</strong> <span th:text="${declaration.gender}"></span></p>
+        <p><strong>Quốc tịch:</strong> <span th:text="${declaration.nationality}"></span></p>
+        <p><strong>Số CMND/Hộ chiếu:</strong> <span th:text="${declaration.idCard}"></span></p>
+    </div>
+
+    <div class="info-section">
+        <h3>Thông tin đi lại</h3>
+        <p><strong>Phương tiện:</strong> <span th:text="${declaration.travelInfo}"></span></p>
+        <p><strong>Số hiệu phương tiện:</strong> <span th:text="${declaration.vehicleNumber}"></span></p>
+        <p><strong>Số ghế:</strong> <span th:text="${declaration.seatNumber}"></span></p>
+        <p><strong>Ngày khởi hành:</strong> <span th:text="${declaration.startDay + '/' + declaration.startMonth + '/' + declaration.startYear}"></span></p>
+        <p><strong>Ngày kết thúc:</strong> <span th:text="${declaration.endDay + '/' + declaration.endMonth + '/' + declaration.endYear}"></span></p>
+    </div>
+
+    <div class="info-section">
+        <h3>Địa chỉ và liên lạc</h3>
+        <p><strong>Tỉnh/Thành:</strong> <span th:text="${declaration.province}"></span></p>
+        <p><strong>Quận/Huyện:</strong> <span th:text="${declaration.district}"></span></p>
+        <p><strong>Phường/Xã:</strong> <span th:text="${declaration.ward}"></span></p>
+        <p><strong>Địa chỉ nơi ở:</strong> <span th:text="${declaration.address}"></span></p>
+        <p><strong>Điện thoại:</strong> <span th:text="${declaration.phone}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${declaration.email}"></span></p>
+    </div>
+
+    <div class="info-section">
+        <h3>Tình trạng sức khỏe</h3>
+        <p><strong>Sốt:</strong> <span th:text="${declaration.symptomFever}"></span></p>
+        <p><strong>Ho:</strong> <span th:text="${declaration.symptomCough}"></span></p>
+        <p><strong>Khó thở:</strong> <span th:text="${declaration.symptomShortBreath}"></span></p>
+        <p><strong>Đau họng:</strong> <span th:text="${declaration.symptomSoreThroat}"></span></p>
+        <p><strong>Nôn/Buồn nôn:</strong> <span th:text="${declaration.symptomVomit}"></span></p>
+        <p><strong>Tiêu chảy:</strong> <span th:text="${declaration.symptomDiarrhea}"></span></p>
+        <p><strong>Xuất huyết ngoài da:</strong> <span th:text="${declaration.symptomHemorrhage}"></span></p>
+        <p><strong>Nổi ban ngoài da:</strong> <span th:text="${declaration.symptomRash}"></span></p>
+    </div>
+
+    <div class="info-section">
+        <h3>Lịch sử phơi nhiễm</h3>
+        <p><strong>Tiếp xúc động vật/trang trại:</strong> <span th:text="${declaration.exposureAnimal}"></span></p>
+        <p><strong>Tiếp xúc người bệnh/nghi ngờ:</strong> <span th:text="${declaration.exposureCovid}"></span></p>
+    </div>
+
+    <a th:href="@{/}" class="back-link">Khai báo lại</a>
+</div>
+</body>
+</html>
