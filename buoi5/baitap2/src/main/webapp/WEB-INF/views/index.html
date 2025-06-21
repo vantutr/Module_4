@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bức ảnh của ngày</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: 20px auto; color: #333; }
+    #img-of-the-day { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    h1, h2 { color: #2c3e50; }
+    hr { border: 1px solid #eee; margin: 40px 0; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .btn {
+      background-color: #3498db; color: white; padding: 10px 15px;
+      border: none; border-radius: 4px; cursor: pointer; font-size: 16px;
+    }
+    .btn:hover { background-color: #2980b9; }
+    .feedback-list { list-style-type: none; padding: 0; }
+    .feedback-item { border: 1px solid #eee; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+    .feedback-item p { margin: 0 0 10px 0; }
+    .feedback-author { font-weight: bold; }
+    .like-section { display: flex; align-items: center; }
+    .like-section a {
+      text-decoration: none; background-color: #e74c3c; color: white;
+      padding: 5px 10px; border-radius: 20px; font-size: 14px; margin-left: 10px;
+    }
+    .like-section span { font-weight: bold; font-size: 16px; color: #e74c3c;}
+  </style>
+</head>
+<body>
+
+<h1>Bức ảnh của ngày - NASA</h1>
+<img id="img-of-the-day" alt="Loading image...">
+
+<hr>
+
+<h2>Để lại bình luận của bạn</h2>
+<form th:action="@{/comment}" method="post" th:object="${newFeedback}">
+  <div class="form-group">
+    <label for="author">Tên của bạn:</label>
+    <input type="text" id="author" th:field="*{author}" required>
+  </div>
+  <div class="form-group">
+    <label for="rating">Đánh giá:</label>
+    <select id="rating" th:field="*{rating}">
+      <option value="5">5 (Tuyệt vời)</option>
+      <option value="4">4 (Tốt)</option>
+      <option value="3">3 (Bình thường)</option>
+      <option value="2">2 (Tạm được)</option>
+      <option value="1">1 (Tệ)</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="comment">Bình luận:</label>
+    <textarea id="comment" th:field="*{comment}" required></textarea>
+  </div>
+  <button type="submit" class="btn">Gửi bình luận</button>
+</form>
+
+<hr>
+
+<h2>Các bình luận hôm nay</h2>
+<ul class="feedback-list">
+  <li th:each="feedback : ${feedbacks}" class="feedback-item">
+    <p><span class="feedback-author" th:text="${feedback.author}"></span>
+      <span th:text="' - Đánh giá: ' + ${feedback.rating} + '/5'"></span></p>
+    <p th:text="${feedback.comment}"></p>
+    <div class="like-section">
+      <span>+<th:block th:text="${feedback.likes}"></th:block></span>
+      <a th:href="@{/like/{id}(id=${feedback.id})}">👍 Like</a>
+    </div>
+  </li>
+</ul>
+
+<script>
+  let apiKey = 'WAjoci3K6EN72PqaciimO9Td1md0tXwCFdBPnVG4';
+  let query = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+  let request = new XMLHttpRequest();
+  request.open('GET', query);
+  request.onload = function() {
+    if (request.status === 200) {
+      let response = JSON.parse(request.responseText);
+      if (response.media_type === 'image') {
+        document.getElementById('img-of-the-day').setAttribute('src', response.url);
+      } else {
+        document.getElementById('img-of-the-day').setAttribute('alt', 'Hôm nay là video, không hiển thị được.');
+      }
+    } else {
+      document.getElementById('img-of-the-day').setAttribute('alt', 'Không thể tải ảnh từ NASA.');
+    }
+  };
+  request.send();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách bài hát</title>
+    <style>
+        body { font-family: sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        a { text-decoration: none; color: blue; }
+        .action-links a { margin-right: 10px; }
+        audio { width: 300px; }
+    </style>
+</head>
+<body>
+<h1>Ứng dụng nghe nhạc</h1>
+<p><a href="/songs/create">Thêm bài hát mới</a></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Tên bài hát</th>
+        <th>Nghệ sĩ</th>
+        <th>Thể loại</th>
+        <th>Nghe nhạc</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song : ${songs}">
+        <td th:text="${song.name}"></td>
+        <td th:text="${song.artist}"></td>
+        <td th:text="${song.genre}"></td>
+        <td>
+            <audio controls>
+                <source th:src="@{/music/{filePath}(filePath=${song.filePath})}" type="audio/mpeg">
+                Trình duyệt không hỗ trợ.
+            </audio>
+<!--            <audio controls th:src="@{'/music/' + ${song.filePath}}"></audio>-->
+        </td>
+        <td class="action-links">
+            <a th:href="@{/songs/edit/{id}(id=${song.id})}">Sửa</a>
+            <a th:href="@{/songs/delete/{id}(id=${song.id})}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
