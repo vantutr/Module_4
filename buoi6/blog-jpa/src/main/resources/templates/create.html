@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết blog</title>
+</head>
+<body>
+<h2>Viết blog mới</h2>
+<form th:action="@{/blogs/save}" th:object="${blog}" method="post">
+    <label>Tiêu đề:</label>
+    <input type="text" th:field="*{title}"><br>
+    <label>Nội dung:</label>
+    <textarea th:field="*{content}"></textarea><br>
+    <button type="submit">Lưu</button>
+</form>
+
+</body>
+</html>
