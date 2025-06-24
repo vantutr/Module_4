@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>NASA Photo of the Day</title>
+</head>
+<body>
+<h2>NASA Photo of the Day</h2>
+<img id="img-of-the-day" width="600">
+
+<form th:action="@{/submit}" method="post">
+  <label>Author:</label>
+  <input name="author" required><br>
+  <label>Comment:</label><br>
+  <textarea name="comment" required></textarea><br>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="5">5 - So awesome</option>
+    <option value="4">4 - Great</option>
+    <option value="3">3 - Okay</option>
+    <option value="2">2 - Bad</option>
+    <option value="1">1 - Awful</option>
+  </select><br>
+  <button type="submit">Comment</button>
+</form>
+
+<h3>Feedback Today</h3>
+<div th:each="fb : ${feedbackPage.content}">
+  <p>+[[${fb.rating}]] [[${fb.comment}]] - [[${fb.author}]]</p>
+  <form th:action="@{'/like/' + ${fb.id}}" method="post">
+    <button type="submit">Like ([[${fb.likes}]])</button>
+  </form>
+</div>
+
+<div>
+  <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+    <a th:href="@{|/?page=${i}|}" th:text="${i + 1}"
+       th:classappend="${i} == ${currentPage} ? 'current-page' : ''"></a>
+  </span>
+</div>
+
+<!--<script th:inline="javascript">-->
+<!--  let query = 'https://api.nasa.gov/planetary/apod?api_key=[[${apiKey}]]';-->
+<!--  fetch(query)-->
+<!--          .then(response => response.json())-->
+<!--          .then(data => {-->
+<!--            document.getElementById('img-of-the-day').src = data.url;-->
+<!--          });-->
+<!--</script>-->
+
+<script>
+  let query = 'https://api.nasa.gov/planetary/apod?api_key=[[${apiKey}]]';
+  let request = new XMLHttpRequest();
+  request.open('GET', query);
+  request.onload = function() {
+    if (request.status === 200) {
+      let response = JSON.parse(request.responseText);
+      document.getElementById('img-of-the-day').setAttribute('src', response.url);
+    }
+  };
+  request.send();
+</script>
+
+</body>
+</html>
