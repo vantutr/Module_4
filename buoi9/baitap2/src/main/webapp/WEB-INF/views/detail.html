@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sách</title>
+</head>
+<body>
+<h1>Chi tiết sách</h1>
+<div th:object="${book}">
+  <p><strong>Tên sách:</strong> <span th:text="*{title}"></span></p>
+  <p><strong>Tác giả:</strong> <span th:text="*{author}"></span></p>
+  <p><strong>Số lượng còn lại:</strong> <span th:text="*{quantity}"></span></p>
+</div>
+<form th:action="@{/borrow}" method="post">
+  <input type="hidden" name="bookId" th:value="${book.id}"/>
+  <button type="submit" th:disabled="${book.quantity == 0}">Mượn sách</button>
+</form>
+<a href="/">Quay lại danh sách</a>
+</body>
+</html>
