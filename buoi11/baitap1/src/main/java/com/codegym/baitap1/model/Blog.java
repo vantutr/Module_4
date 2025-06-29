@@ -1,20 +1,40 @@
-package com.codegym.baitap1.dto;
+package com.codegym.baitap1.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-public class BlogDTO {
+@Entity
+@Table(name = "blogs")
+public class Blog {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String summary;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
+
     private String author;
 
+    @Column(name = "creation_date", updatable = false)
     private LocalDateTime creationDate;
 
-    // Sử dụng CategoryDTO thay vì entity Category
-    private CategoryDTO category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
-    public BlogDTO() {
+    public Blog() {
+    }
+
+    @PrePersist
+    public void prePersist() {
+        creationDate = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -65,11 +85,11 @@ public class BlogDTO {
         this.creationDate = creationDate;
     }
 
-    public CategoryDTO getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryDTO category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 }
