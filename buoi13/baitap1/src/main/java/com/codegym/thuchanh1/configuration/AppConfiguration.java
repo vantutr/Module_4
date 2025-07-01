@@ -1,4 +1,4 @@
-package com.codegym.thuchanh1.config;
+package com.codegym.thuchanh1.configuration;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -23,8 +23,9 @@ import java.util.Locale;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.codegym.thuchanh1")
+@ComponentScan("com.codegym.thuchanh1.controller")
 public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
+
     private ApplicationContext applicationContext;
 
     @Override
@@ -32,6 +33,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         this.applicationContext = applicationContext;
     }
 
+    //Thymeleaf
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -58,6 +60,8 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         return viewResolver;
     }
 
+
+    //Chỉ cho Spring biết nơi để tìm các tệp chứa văn bản dịch
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
@@ -66,6 +70,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         return messageSource;
     }
 
+    //Bắt tham số lang trên URL để cho phép người dùng thay đổi ngôn ngữ.
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
@@ -73,10 +78,13 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         registry.addInterceptor(interceptor);
     }
 
+    //  Xác định ngôn ngữ sẽ sử dụng cho người dùng
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         localeResolver.setDefaultLocale(new Locale("en"));
         return localeResolver;
     }
+
+
 }
