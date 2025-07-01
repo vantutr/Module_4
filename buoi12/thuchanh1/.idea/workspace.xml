@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d1482fdf-3228-4e9a-9617-60178ebfb5c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../buoi1/baitap2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi1/baitap2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi1/thuchanh2/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi1/thuchanh2/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/java/com/codegym/baitap1/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/cart/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/cart/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/cart/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/cart/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/product/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/product/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/product/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/baitap1/src/main/webapp/WEB-INF/views/product/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/controller/CounterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/controller/CounterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/model/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/java/com/codegym/thuchanh1/model/Counter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh1/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/java/com/codegym/thuchanh2/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/webapp/WEB-INF/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh2/src/main/webapp/WEB-INF/views/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/controller/ShoppingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/java/com/codegym/thuchanh3/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/error_404.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/error_404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi10/thuchanh3/src/main/webapp/WEB-INF/views/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi3/baitap1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi3/baitap1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi4/thuchanh3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi4/thuchanh3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/configuration/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/configuration/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/BlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/BlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/IBlogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/IBlogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/IGenerateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/repository/IGenerateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/IGenerateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/java/com/codegym/baitap1/service/IGenerateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi6/baitap1/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi7/baitap1/src/main/webapp/WEB-INF/blog/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi7/baitap1/src/main/webapp/WEB-INF/blog/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi8/baitap1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi8/baitap1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi8/baitap2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi8/baitap2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../buoi8/baitap2/src/main/java/com/codegym/baitap2/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../buoi8/baitap2/src/main/java/com/codegym/baitap2/controller/SongController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2zDmhlpb3xBF0Dh13v4JaSN7ISV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1482fdf-3228-4e9a-9617-60178ebfb5c0" name="Changes" comment="" />
+      <created>1751274140653</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751274140653</updated>
+      <workItem from="1751274143644" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

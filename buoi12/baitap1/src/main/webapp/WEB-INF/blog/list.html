@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách Blog - AJAX</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Ứng dụng Blog</h1>
+<p><a th:href="@{/blogs/create}">Viết bài mới</a> | <a th:href="@{/categories}">Quản lý Danh mục</a></p>
+
+<div style="display: flex;">
+  <div style="flex-grow: 3; padding-right: 20px;">
+    <h2>Tất cả bài viết</h2>
+
+    <table border="1" style="width: 100%;">
+      <thead>
+      <tr>
+        <th>Tiêu đề</th>
+        <th>Tóm tắt</th>
+        <th>Danh mục</th>
+        <th>Ngày tạo</th>
+        <th>Hành động</th>
+      </tr>
+      </thead>
+      <tbody id="blog-table-body">
+      <tr th:each="blog : ${blogsPage.content}">
+        <td th:text="${blog.title}"></td>
+        <td th:text="${blog.summary}"></td>
+        <td th:text="${blog.category?.name}"></td>
+        <td th:text="${#temporals.format(blog.creationDate, 'dd/MM/yyyy')}"></td>
+        <td>
+          <a th:href="@{/blogs/view/{id}(id=${blog.id})}">Xem</a> |
+          <a th:href="@{/blogs/edit/{id}(id=${blog.id})}">Sửa</a> |
+          <a th:href="@{/blogs/delete/{id}(id=${blog.id})}">Xóa</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <button id="loadMoreButton">Tải thêm</button>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1;">
+    <h3>Tìm kiếm (AJAX)</h3>
+    <div>
+      <input type="text" id="searchInput" placeholder="Tìm theo tiêu đề...">
+      <button type="button" id="searchButton">Tìm kiếm</button>
+    </div>
+    <hr>
+    <h3>Danh mục</h3>
+    <ul>
+      <li><a th:href="@{/blogs}">Tất cả bài viết</a></li>
+      <li th:each="cat : ${categories}">
+        <a th:href="@{/blogs/category/{id}(id=${cat.id})}" th:text="${cat.name}"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Hàm helper để render một dòng của bảng
+  function createBlogRowHtml(blog) {
+
+    let creationDate = blog.creationDate;
+
+    return `
+        <tr>
+            <td>${blog.title}</td>
+            <td>${blog.summary}</td>
+            <td>${blog.category ? blog.category.name : ''}</td>
+            <td>${creationDate}</td>
+            <td>
+                <a href="/blogs/view/${blog.id}">Xem</a> |
+                <a href="/blogs/edit/${blog.id}">Sửa</a> |
+                <a href="/blogs/delete/${blog.id}">Xóa</a>
+            </td>
+        </tr>
+    `;
+  }
+
+  $(document).ready(function() {
+
+    // --- 1. LOGIC CHO TÍNH NĂNG TÌM KIẾM (PHIÊN BẢN CẬP NHẬT) ---
+    $('#searchButton').on('click', function() {
+      let searchTerm = $('#searchInput').val();
+
+      $.ajax({
+        type: "GET",
+        url: "/api/blogs/search",
+        data: {
+          title: searchTerm,
+          // Gửi cả thông tin trang, ở đây ta mặc định lấy trang đầu tiên
+          page: 0,
+          size: 5 // Hoặc số lượng bạn muốn hiển thị
+        },
+        success: function(pageData) { // Dữ liệu trả về giờ là một đối tượng Page
+          let tableBody = $('#blog-table-body');
+          tableBody.empty();
+
+          // Lấy danh sách blog từ thuộc tính "content" của đối tượng Page
+          let blogs = pageData.content;
+
+          if (blogs.length > 0) {
+            blogs.forEach(function(blog) {
+              tableBody.append(createBlogRowHtml(blog));
+            });
+          } else {
+            tableBody.append('<tr><td colspan="5" style="text-align: center;">Không tìm thấy kết quả nào</td></tr>');
+          }
+
+          // Vì kết quả tìm kiếm có thể có nhiều trang,
+          // để đơn giản, ta chỉ hiển thị trang đầu và ẩn nút "Tải thêm" đi.
+          // (Bạn có thể phát triển thêm logic "tải thêm cho kết quả tìm kiếm" nếu muốn)
+          $('#loadMoreButton').hide();
+        },
+        error: function() {
+          alert('Lỗi khi tìm kiếm!');
+        }
+      });
+    });
+
+    // --- 2. LOGIC CHO TÍNH NĂNG TẢI THÊM ---
+    let currentPage = 0; // Trang đầu tiên (0) đã được tải bởi Thymeleaf
+    let pageSize = 5; // Giả sử mỗi trang có 5 bài, bạn có thể thay đổi
+
+    $('#loadMoreButton').on('click', function() {
+      currentPage++; // Chuyển sang trang tiếp theo
+
+      $.ajax({
+        type: "GET",
+        url: "/api/blogs",
+        data: {
+          page: currentPage,
+          size: pageSize
+        },
+        success: function(pageData) {
+          // pageData.content là danh sách các bài viết
+          if (pageData.content.length > 0) {
+            pageData.content.forEach(function(blog) {
+              // Nối thêm vào bảng, không xóa nội dung cũ
+              $('#blog-table-body').append(createBlogRowHtml(blog));
+            });
+          }
+
+          // Nếu đây là trang cuối cùng, ẩn nút đi
+          if (pageData.last) {
+            $('#loadMoreButton').hide();
+          }
+        },
+        error: function() {
+          alert('Lỗi khi tải thêm bài viết!');
+        }
+      });
+    });
+
+  });
+</script>
+
+</body>
+</html>
