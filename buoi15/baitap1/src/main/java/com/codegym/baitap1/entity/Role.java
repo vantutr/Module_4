@@ -1,13 +1,15 @@
-package com.codegym.baitap1.model;
+package com.codegym.baitap1.entity;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String name;
 
     public Role() {}
