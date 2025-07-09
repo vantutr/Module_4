@@ -1,4 +1,6 @@
 package com.codegym.thuchanh2.configuration;
 
-public class SecurityInit {
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+
+public class SecurityInit extends AbstractSecurityWebApplicationInitializer {
 }

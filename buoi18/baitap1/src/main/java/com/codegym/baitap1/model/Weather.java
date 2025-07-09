@@ -1,35 +1,24 @@
 package com.codegym.baitap1.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-public class Location {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Weather {
+
     @Id
-    private String name;
-    private String forecast;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public Location() {
-    }
-
-    public Location(String name, String forecast) {
-        this.name = name;
-        this.forecast = forecast;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getForecast() {
-        return forecast;
-    }
-
-    public void setForecast(String forecast) {
-        this.forecast = forecast;
-    }
+    private String location;
+    private String temperature;
+    private String description;
 }
